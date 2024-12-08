@@ -4,12 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Hola</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/5eb9a471987915da@31.js?v=4&api_key=10c875697f963f0a8a7ab93186c82c1587b587af";
+new Runtime().module(define, name => {
+  if (name === "viewof table") return new Inspector(document.querySelector("#observablehq-viewof-table-8b54a3a6"));
+});
+</script>
+
 </head>
 <body>
 <h1>Hola Mundo!</h1>
 <div class="grid grid-cols-2">
   <div class="card"><h1>A</h1>1 × 1</div>
-  <div class="card grid-rowspan-2"><h1>B</h1>1 × 2</div>
+  <div class="card grid-rowspan-2"><h1>B</h1>1 × 2
+  <div id="observablehq-viewof-table-8b54a3a6"></div>
+<p>Credit: <a href="https://observablehq.com/d/5eb9a471987915da@31">Untitled by ds.02</a></p>
+
+  
+  </div>
   <div class="card"><h1>C</h1>1 × 1</div>
   <div class="card grid-colspan-2">
     <h1>D</h1>
