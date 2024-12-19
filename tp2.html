@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +26,13 @@
             margin-top: 20px;
             margin-bottom: 10px;
         }
+
         h3 {
             font-size: 1.2em;
             margin-top: 20px;
             margin-bottom: 10px;
         }
+
         p {
             font-size: 1em;
             margin-bottom: 20px;
@@ -42,7 +45,8 @@
             padding: 2em;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 10px 10px 10px 16px;
 
@@ -60,151 +64,155 @@
         tr:hover {
             background-color: #ddd;
         }
-        
+
         #myplot {
             margin-top: 20px;
         }
     </style>
 </head>
+
 <body>
     <h1 class="h">TP Final - An&aacute;lisis Exploratorio de Datos y Visualizaciones</h1>
     <h4>Grupo: <strong>Luciano Castro</strong> y <strong>Alejandro Stanfield</strong></h2>
-    
-    <h2 class="h">An&aacute;lisis de publicaciones de AirBnB para Buenos Aires</h1>
 
-    <h3>Primeras impresiones</h2>
-            
-    <p>Encontramos en una primer mirada que los datos "escrapeados" est&aacute;n llenos de errores y outliers</p>
-            
-    <p>En el siguiente boxplot se puede ver que hay publicaciones con precios muy bajos y muy altos, lo que indica que hay errores en la carga de los datos</p>
-    
-    <div id="myplot"></div>
-    <p>Analizando num&eacute;ricamente los distintos percentiles encontramos:</p>
-    <table class="table-auto text-right p-3 font-mono auto-cols-max">
-        <tr class="p-3">
-            <th>room_type</th>
-            <th>count</th>
-            <th>mean</th>
-            <th>std</th>
-            <th>min</th>
-            <th>20%</th>
-            <th>50%</th>
-            <th>80%</th>
-            <th>90%</th>
-            <th>95%</th>
-            <th>97%</th>
-            <th>98%</th>
-            <th>max</th>
-        </tr>
-        <tr>
-            <td>Entire home/apt</td>
-            <td>29,168</td>
-            <td>  83,746</td>
-            <td>1,123,777</td>
-            <td>260</td>
-            <td>29,134</td>
-            <td>40,380</td>
-            <td>70,664</td>
-            <td>100,949</td>
-            <td>148,395</td>
-            <td>191,803</td>
-            <td>235,470</td>
-            <td>100,949,202</td>
-        </tr>
-        <tr>
-            <td>Hotel room</td>
-            <td>61</td>
-            <td>47,565</td>
-            <td>64,258</td>
-            <td>10,095</td>
-            <td>12,114</td>
-            <td>13,123</td>
-            <td>69,221</td>
-            <td>100,949</td>
-            <td>225,985</td>
-            <td>247,067</td>
-            <td>251,047</td>
-            <td>273,865</td>
-        </tr>
-        <tr>
-            <td>Private room</td>
-            <td>2,371</td>
-            <td>181,869</td>
-            <td>2,453,749</td>
-            <td>1,500</td>
-            <td>14,926</td>
-            <td>20,190</td>
-            <td>38,571</td>
-            <td>60,570</td>
-            <td>99,147</td>
-            <td>166,277</td>
-            <td>267,899</td>
-            <td>52,998,331</td>
-        </tr>
-        <tr>
-            <td>Shared room</td>
-            <td>246</td>
-            <td>257,756</td>
-            <td>2,303,396</td>
-            <td>3,600</td>
-            <td>10,812</td>
-            <td>14,133</td>
-            <td>22,209</td>
-            <td>47,628</td>
-            <td>81,191</td>
-            <td>384,617</td>
-            <td>678,594</td>
-            <td>32,303,745</td>
-        </tr>
-    </table>    
-                
+        <h2 class="h">An&aacute;lisis de publicaciones de AirBnB para Buenos Aires</h1>
 
-    <br>
-    <p>Procedemos entonces a cortar el dataset de acuerdo a los outliers de cada room_type en el 95 percentil y volvemos a analizar</p>
+            <h3>Primeras impresiones
+        </h2>
 
-    <div id="myplot_filt_1">   </div>
+        <p>Encontramos en una primer mirada que los datos "escrapeados" est&aacute;n llenos de errores y outliers</p>
 
-    <br>
-    <p>Vemos la distribuci&oacute;n por barrio</p>
-    
-    <div id="myplot_barrio">   </div>
+        <p>En el siguiente boxplot se puede ver que hay publicaciones con precios muy bajos y muy altos, lo que indica
+            que hay errores en la carga de los datos</p>
+
+        <div id="myplot"></div>
+        <p>Analizando num&eacute;ricamente los distintos percentiles encontramos:</p>
+        <table class="table-auto text-right p-3 font-mono auto-cols-max">
+            <tr class="p-3">
+                <th>room_type</th>
+                <th>count</th>
+                <th>mean</th>
+                <th>std</th>
+                <th>min</th>
+                <th>20%</th>
+                <th>50%</th>
+                <th>80%</th>
+                <th>90%</th>
+                <th>95%</th>
+                <th>97%</th>
+                <th>98%</th>
+                <th>max</th>
+            </tr>
+            <tr>
+                <td>Entire home/apt</td>
+                <td>29,168</td>
+                <td> 83,746</td>
+                <td>1,123,777</td>
+                <td>260</td>
+                <td>29,134</td>
+                <td>40,380</td>
+                <td>70,664</td>
+                <td>100,949</td>
+                <td>148,395</td>
+                <td>191,803</td>
+                <td>235,470</td>
+                <td>100,949,202</td>
+            </tr>
+            <tr>
+                <td>Hotel room</td>
+                <td>61</td>
+                <td>47,565</td>
+                <td>64,258</td>
+                <td>10,095</td>
+                <td>12,114</td>
+                <td>13,123</td>
+                <td>69,221</td>
+                <td>100,949</td>
+                <td>225,985</td>
+                <td>247,067</td>
+                <td>251,047</td>
+                <td>273,865</td>
+            </tr>
+            <tr>
+                <td>Private room</td>
+                <td>2,371</td>
+                <td>181,869</td>
+                <td>2,453,749</td>
+                <td>1,500</td>
+                <td>14,926</td>
+                <td>20,190</td>
+                <td>38,571</td>
+                <td>60,570</td>
+                <td>99,147</td>
+                <td>166,277</td>
+                <td>267,899</td>
+                <td>52,998,331</td>
+            </tr>
+            <tr>
+                <td>Shared room</td>
+                <td>246</td>
+                <td>257,756</td>
+                <td>2,303,396</td>
+                <td>3,600</td>
+                <td>10,812</td>
+                <td>14,133</td>
+                <td>22,209</td>
+                <td>47,628</td>
+                <td>81,191</td>
+                <td>384,617</td>
+                <td>678,594</td>
+                <td>32,303,745</td>
+            </tr>
+        </table>
 
 
+        <br>
+        <p>Procedemos entonces a cortar el dataset de acuerdo a los outliers de cada room_type en el 95 percentil y
+            volvemos a analizar</p>
 
-    <script type="module">
-        // import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+        <div id="myplot_filt_1"> </div>
 
-        // import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
-        // import * as fs from "fs";
-    
-        // var listing = [];
+        <br>
+        <p>Vemos la distribuci&oacute;n por barrio</p>
 
-        const listing = await d3.csv("2024-11-29-listings.csv", d3.autoType);
+        <div id="myplot_barrio"> </div>
 
-        const limit95 = {
-            "Entire home/apt":148395.0,
-            "Hotel room":225985.0,
-            "Private room":99147.0,
-            "Shared room":81191.0
-        };
 
-        listing.forEach(element => {
-            
-        });
 
-        // copy listing to filtered where price is less than 1000000
-        var filtered = listing.filter(function (el) {
-            return (50000 < el.price) && (el.price < limit95[el.room_type]);
-        });
+        <script type="module">
+            // import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
-        // .then(function(csvData) {
-        //     listing = csvData;
-        //     console.log(listing.length );
-        //     console.log(listing[0] );
-        //     console.log(listing[0]['price']+1 );
-        // });
+            // import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
+            // import * as fs from "fs";
 
-        const bp = Plot.plot({
+            // var listing = [];
+
+            const listing = await d3.csv("2024-11-29-listings.csv", d3.autoType);
+
+            const limit95 = {
+                "Entire home/apt": 148395.0,
+                "Hotel room": 225985.0,
+                "Private room": 99147.0,
+                "Shared room": 81191.0
+            };
+
+            listing.forEach(element => {
+
+            });
+
+            // copy listing to filtered where price is less than 1000000
+            var filtered = listing.filter(function (el) {
+                return (50000 < el.price) && (el.price < limit95[el.room_type]);
+            });
+
+            // .then(function(csvData) {
+            //     listing = csvData;
+            //     console.log(listing.length );
+            //     console.log(listing[0] );
+            //     console.log(listing[0]['price']+1 );
+            // });
+
+            const bp = Plot.plot({
                 marginLeft: 160,
                 width: 1200,
                 fy: {
@@ -225,12 +233,12 @@
                     Plot.ruleX([0]),
                     // Plot.boxY(listing, {fx: "room_type", y: "price"}),
                     // Plot.boxX(filtered, {fy: "neighbourhood", x: "price"}),
-                    Plot.boxX(listing, {fy: "room_type", x: "price"}),
+                    Plot.boxX(listing, { fy: "room_type", x: "price" }),
                     // Plot.dot(listing, {x: "room_type", y: "price", fill: "black", r: 2})
                 ]
             });
 
-        const bpf = Plot.plot({
+            const bpf = Plot.plot({
                 marginLeft: 160,
                 width: 1200,
                 fy: {
@@ -251,12 +259,12 @@
                     Plot.ruleX([0]),
                     // Plot.boxY(listing, {fx: "room_type", y: "price"}),
                     // Plot.boxX(filtered, {fy: "neighbourhood", x: "price"}),
-                    Plot.boxX(filtered, {fy: "room_type", x: "price"}),
+                    Plot.boxX(filtered, { fy: "room_type", x: "price" }),
                     // Plot.dot(listing, {x: "room_type", y: "price", fill: "black", r: 2})
                 ]
             });
 
-        const bp2 = Plot.plot({
+            const bp2 = Plot.plot({
                 marginLeft: 160,
                 width: 1200,
                 fy: {
@@ -267,7 +275,7 @@
                     grid: true,
                     label: "Precio"
                 },
-                y: { 
+                y: {
                     tickFormat: d => `${d} - (aa ${filtered.filter(f => f.neighbourhood === d).length})`,
                     // axis: left,
 
@@ -281,20 +289,30 @@
                 marks: [
                     Plot.ruleX([0]),
                     // Plot.boxY(listing, {fx: "room_type", y: "price"}),
-                    Plot.boxX(filtered, {fy: "neighbourhood", x: "price"}),
+                    Plot.boxX(filtered, { fy: "neighbourhood", x: "price" }),
                     // Plot.boxX(filtered, {fy: "room_type", x: "price"}),
                     // Plot.dot(listing, {x: "room_type", y: "price", fill: "black", r: 2})
                 ]
             });
 
-        const elem = document.querySelector("#myplot");
-        elem.append(bp);
+            const elem = document.querySelector("#myplot");
+            elem.append(bp);
 
-        const elemf = document.querySelector("#myplot_filt_1");
-        elemf.append(bpf);
+            const elemf = document.querySelector("#myplot_filt_1");
+            elemf.append(bpf);
 
-        document.querySelector("#myplot_barrio").append(bp2);
+            document.querySelector("#myplot_barrio").append(bp2);
 
-    </script>    
+        </script>
+
+        <br>
+        <p>Analisamos la distribucion de precios por room type</p>
+        <img source="https://alex-stanfield.github.io/ds.02/images/histogramas.png" />
+
+        <br>
+        <p>Luego de normalizar los precios utilizando Enero 24 como base 100, comparamos su evolucion en Arg y USD
+            contra el IPC.</p>
+        <img source="https://alex-stanfield.github.io/ds.02/images/evolucion.png" />
 </body>
+
 </html>
